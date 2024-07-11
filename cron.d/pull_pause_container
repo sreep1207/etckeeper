@@ -1,0 +1,1 @@
+0,15,30,45 *    * * * root /usr/local/share/eks/pull-sandbox-image.sh > /tmp/pause-container-pull.log

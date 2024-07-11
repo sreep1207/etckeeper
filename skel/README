@@ -1,0 +1,32 @@
+Ubuntu Node OS image for Amazon Elastic Container Service for Kubernetes (EKS)
+==============================================================================
+
+This image is customized specifically for the EKS service and is not
+intended as a general OS image.
+
+Customization is done during first boot and is driven by the bootstrap script
+found at /usr/local/share/eks/bootstrap.sh. This is also symlinked under
+/etc/eks/bootstrap.sh so it can be found by the default Amazon EKS nodegroup
+YAML. The bootstrap script is executed by cloud-init and output is visible in
+/var/log/cloud-init-output.log. The script will determine the cluster to join
+based on the instance tag “Key=kubernetes.io/cluster/<cluster_name>,
+Value=owned" which should be associated with the instance from the autoscaling
+group. See the sample CloudFormation template in this same directory named
+amazon-eks-nodegroup.yaml.
+
+How to customize node set up
+-----------------------
+User data is passed to cluster nodes via the nodegroup YAML and a call to
+/etc/eks/bootstrap.sh; the default nodegroup configuration file to use is
+amazon-eks-nodegroup.yaml, as listed here:
+https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html
+
+If the user wishes to override the in-image configuration entirely there are
+a couple options:
+
+1. Define a custom nodegroup YAML to pass custom arguments to the bootstrap
+script, or drop custom artifacts into the image. Then point the
+CloudFormation Stack creation wizard at this custom YAML.
+
+2. Replace the bootstrap.sh script entirely for use with either the default
+Amazon nodegroup YAML or use a custom one.

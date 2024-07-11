@@ -1,0 +1,1 @@
+/usr/local/share/eks/max-pods-calculator.sh

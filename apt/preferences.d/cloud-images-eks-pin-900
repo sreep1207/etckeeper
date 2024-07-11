@@ -1,0 +1,15 @@
+Package: cnitool
+Pin: release o=LP-PPA-cloud-images-eks-01.11.0
+Pin-Priority: 900
+
+Package: cnitool-plugins
+Pin: release o=LP-PPA-cloud-images-eks-01.11.0
+Pin-Priority: 900
+
+Package: heptio-authenticator-aws
+Pin: release o=LP-PPA-cloud-images-eks-01.11.0
+Pin-Priority: 900
+
+Package: aws-iam-authenticator
+Pin: release o=LP-PPA-cloud-images-eks-01.11.0
+Pin-Priority: 900

@@ -1,0 +1,20 @@
+[Unit]
+# Auto-generated, DO NOT EDIT
+Description=Service for snap application kubelet-eks.daemon
+Requires=snap-kubelet\x2deks-222.mount
+Wants=network.target
+After=snap-kubelet\x2deks-222.mount network.target snapd.apparmor.service
+X-Snappy=yes
+
+[Service]
+EnvironmentFile=-/etc/environment
+ExecStart=/usr/bin/snap run kubelet-eks.daemon
+SyslogIdentifier=kubelet-eks.daemon
+Restart=always
+RestartSec=4
+WorkingDirectory=/var/snap/kubelet-eks/222
+TimeoutStopSec=30
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

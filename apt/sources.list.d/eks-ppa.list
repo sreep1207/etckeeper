@@ -1,0 +1,3 @@
+# CLOUD_IMG: This file was created/modified by the Cloud Image build process
+# PPA for (pinned) packages to enable Kubernetes on AWS EKS.
+deb http://ppa.launchpad.net/cloud-images/eks-01.11.0/ubuntu jammy main
