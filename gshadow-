@@ -55,3 +55,6 @@ netdev:!::ubuntu
 crontab:!::
 _chrony:!::
 ubuntu:!::
+ssm-user:!::
+ssl-cert:!::
+postfix:!::

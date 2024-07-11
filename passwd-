@@ -30,3 +30,5 @@ _chrony:x:110:117:Chrony daemon,,,:/var/lib/chrony:/usr/sbin/nologin
 _rpc:x:111:65534::/run/rpcbind:/usr/sbin/nologin
 statd:x:112:65534::/var/lib/nfs:/usr/sbin/nologin
 ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+ssm-user:x:1001:1001::/home/ssm-user:/bin/sh
+postfix:x:113:119::/var/spool/postfix:/usr/sbin/nologin
